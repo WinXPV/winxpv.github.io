@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="Right-Click/style.css">  
+
 <script src="https://kit.fontawesome.com/89c957818b.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -414,7 +416,36 @@ position:absolute; right:10px; top:19px; cursor:pointer;
 </head>
 
 <body>
-<div class="desktopWall"></div>
+<div class="desktopWall">
+  
+<div class="context-menu">
+  <ul>
+    <li>
+      <a href="javascript:void(0);">View</a>
+      <small></small>
+    </li>
+    <li style="border-bottom:1px solid #979797; ">
+      <a href="javascript:void(0);">Refresh</a>
+      <small></small>
+    </li>
+    <li>
+      <a href="javascript:void(0);">Paste</a>
+      <small></small>
+    </li>
+    <li style="border-bottom:1px solid #979797;">
+      <a href="javascript:void(0);">New</a>
+      <small></small>
+    </li>
+    <li>
+      <a href="javascript:void(0);">Properties</a>
+      <small></small>
+    </li>
+  </ul>
+</div> 
+  
+</div>
+  
+  
 <div class="myComIco"></div>
 <div class="overlay">
 </div>
@@ -518,5 +549,9 @@ function dragElement(elmnt) {
   }
 }
 </script>
+  
+<!-- right-click -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="Right-Click/script.js"></script>
 </body>
 </html>
