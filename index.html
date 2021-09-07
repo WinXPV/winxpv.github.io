@@ -1,1 +1,522 @@
-<div style="color:lightgreen; font-size:30px; font-style:italic;">Welcome to WindowsXP Virtual...</div>
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/89c957818b.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+  $(".myComIco").dblclick(function(){
+    $(".overlay").show().css({"display": "flex", "align-items": "center", "justify-content": "center"});
+    $(".blank").show(200).css({"display": "flex", "align-items": "center", "justify-content": "center"});
+  });
+
+  $(".cls").click(function(){
+    $(".overlay").hide();
+    $(".blank").hide(100);
+  });
+
+  $(".maxi").click(function(){
+    $(this).hide();
+    $(".myComWin").css({"width": "100%", "height": "100%", "padding-top": "50px", "top": "0px", "left": "0px"}).addClass("tran");
+    $(".mini").show();
+    $(".rest").show().css({"right": "31px", "bottom": "5px"});
+  });
+
+  $(".mini").click(function(){
+    $(this).hide();
+    $(".myComWin").css({"width": "300px", "height": "33px", "padding-top": "0px", "top": "88%", "left": "1.5%"}).addClass("tran");
+    $(".maxi").show();
+    $(".rest").show().css({"right": "56px", "bottom": "5px"});
+  });
+
+  $(".rest").click(function(){
+    $(this).hide();
+    $(".myComWin").css({"width": "50%", "height": "65%", "padding-top": "50px", "top": "17.5%", "left": "25%"}).addClass("tran");
+    $(".maxi").show();
+    $(".mini").show();
+  });
+
+  $(".titlebar").dblclick(function(){
+    $(".maxi").hide();
+    $(".myComWin").css({"width": "100%", "height": "100%", "padding-top": "50px", "top": "0px", "left": "0px"}).addClass("tran");
+    $(".mini").show();
+    $(".rest").show().css({"right": "31px", "bottom": "5px"});
+  });
+  
+  $(".strbtn").click(function(){
+    $(this).hide();
+    $(".start-overlay").show();
+    $(".strbtn-hide").show();
+  });
+
+  $(".strbtn-hide").click(function(){
+    $(this).hide();
+    $(".start-overlay").hide();
+    $(".strbtn").show();
+  });
+  
+  $(".start-overlay").click(function(){
+    $(this).hide();
+    $(".strbtn").show();
+    $(".strbtn-hide").hide();
+  });
+
+  $(function(){
+    $(".myComIco").draggable();
+  });
+});
+</script>
+
+<style>
+body{font-family:sans-serif;}
+  
+.desktopWall{
+position:fixed;
+height:100%;
+width:100%;
+background:url(https://rawcdn.githack.com/omibuzz/omibuzz.github.io/d7a311e88f37d87fcc0b511e4c6317d5c4734b44/winXP/images/winXPwall.jpg) center no-repeat;
+background-size:100% 100%;
+border:0px solid red;
+top:0px;
+left:0px;
+z-index:-1;
+}
+.myComIco{
+border:1px solid transparent;
+width:60px;
+height:60px;
+display:flex;  align-items:center;  justify-content:center;
+padding:5px;
+background:url(https://static.wikia.nocookie.net/the-microsoft-windows-xp/images/f/f9/XPIcon.png) center no-repeat;
+background-size:60px;
+}
+.myComIco:hover{
+background:#adedff url(https://static.wikia.nocookie.net/the-microsoft-windows-xp/images/f/f9/XPIcon.png) center no-repeat;
+background-size:60px;
+opacity:0.7;
+border:1.1px solid #e6faff;
+border-radius:2px;
+}
+.tran{
+transition: width 0.2s, height 0.2s;
+}
+.overlay{
+position:fixed;
+width:100%; height:100%;
+top:0px; left:0px;
+background:transparent;
+opacity:0.5;
+display:flex;  align-items:center;  justify-content:center;
+display:none;
+}
+.blank{
+position:fixed;
+width:100%; height:100%;
+top:0px; left:0px;
+border:0px solid red;
+display:flex;  align-items:center;  justify-content:center;
+display:none;
+}
+.myComWin{
+position:absolute;
+width:50%; height:65%;
+background:white;
+color:red;
+padding:50px 20px 20px 20px;
+box-sizing:border-box;
+border-radius:5px 5px 1px 1px;
+border:2px solid #296bdf;
+border-top:2px solid #4f8fff;
+overflow:hidden;
+resize: both;
+}
+.winTitle{
+position:absolute;
+color:white;
+left:0px; bottom:3px;
+padding-left:30px;
+font-size:17px;
+font-family:'Sitka Text';
+background:url(https://windowsxp.computersnewyork.com/wp-content/uploads/2018/04/WLQXHbd.png) 5px center no-repeat;
+background-size:18px;
+}
+.titlebar{
+position:absolute;
+top:0px; left:0px;
+background:#0253e2;
+width:100%; height:30px;
+box-sizing: border-box;
+cursor:move;
+box-shadow: 0px 2px 3px #4f8fff inset;
+}
+.cls{
+position:absolute;
+width:20px; height:20px;
+background:#e34814;
+display:flex;  align-items:center;  justify-content:center;
+color:white;
+right:4.5px; bottom:5px;
+border-radius:4px;
+border:1px solid white;
+cursor:pointer;
+}
+.maxi{
+position:absolute;
+width:20px; height:20px;
+display:flex;  align-items:center;  justify-content:center;
+color:white;
+right:33px; bottom:4px;
+border-radius:4px;
+cursor:pointer;
+font-size:20px;
+}
+.mini{
+position:absolute;
+width:20px; height:20px;
+display:flex;  align-items:center;  justify-content:center;
+color:white;
+right:60px; bottom:4px;
+border-radius:4px;
+cursor:pointer;
+font-size:20px;
+}
+.rest{
+position:absolute;
+width:20px; height:20px;
+display:none;
+color:white;
+right:88px; bottom:5px;
+border-radius:4px;
+cursor:pointer;
+font-size:18px;
+}
+.tskbar{
+position:fixed;
+bottom:0px; left:0px;
+width:100%; height:33px;
+background:#1b63e2;
+box-shadow: 0px 3px 4px #79aaff inset;
+z-index:1;
+}
+.strbtn{
+position:absolute;
+bottom:0px; left:0px;
+border:0px solid red;
+width:99px; height:100%;
+background:url(https://rawcdn.githack.com/omibuzz/omibuzz.github.io/0b554c04b8862ef78d3b1ee9983561a76483b171/winXP/images/start-button.png) left center no-repeat;
+background-size:99px;
+opacity:0.9;
+}
+.strbtn:hover{
+opacity:1;
+}
+
+.strbtn-hide{
+position:absolute;
+bottom:0px; left:0px;
+border:0px solid red;
+width:99px; height:100%;
+background:url(https://rawcdn.githack.com/omibuzz/omibuzz.github.io/0b554c04b8862ef78d3b1ee9983561a76483b171/winXP/images/start-button.png) left center no-repeat;
+background-size:99px;
+opacity:0.9;
+display:none;
+}
+
+.start-overlay{
+background:transparent;
+position:fixed;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+display:none;
+}
+
+.strmenu{
+background:white;
+font-size:13px;
+position:fixed;
+width:390px; height:90%;
+border-top:1px solid #005bcf;
+border-right:1.5px solid #005bcf;
+border-bottom:7px solid #005bcf;
+border-left:1px solid #005bcf;
+border-radius:5px 5px 0px 0px;
+left:0px; bottom:33px;
+overflow:hidden;
+}
+
+.strMenuTop{
+width:105%; height:11.6%;
+position:absolute;
+top:0px; left:-2.5%;
+border:0px solid green;
+border-radius:5px 5px 0px 0px;
+background:linear-gradient(#0052bb, #4081d5);
+box-shadow: 0px 2px 3px #8fb8ff inset;
+}
+.strMenuTop .img{
+width:100%; height:100%;
+border:0px solid green;
+position:absolute;
+top:2px;
+display:flex; align-items:center;
+padding-left:70px;
+color:white;
+font-size:20px;
+font-family:Arial;
+}
+.strMenuUnderTop{
+background: linear-gradient(to right, transparent, #ff5400, transparent); position:absolute; top:11.5%; left:0px; width:100%; height:1.5px; border-top:1px solid white;
+}
+
+
+.maps{
+background:url(https://i.imgur.com/0CvBsO2.jpg) 10px center no-repeat; background-size:29px; position:relative; border:0px solid green; top:12%; left:1px; width:50%; height:50px;  cursor:pointer;
+  }
+.maps:hover{
+background:#C6F0FC url(https://i.imgur.com/0CvBsO2.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border:0px solid #e6faff; border-radius:3px; width:49%;
+  }
+
+.people{
+background:url(https://i.imgur.com/imR0N4m.jpg) 10px center no-repeat; background-size:29px; position:relative; border:0px solid green; top:12%; left:1px; width:50%; height:50px;  cursor:pointer;
+  }
+.people:hover{
+background:#C6F0FC url(https://i.imgur.com/imR0N4m.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border:0px solid #e6faff; border-radius:3px; width:49%;
+  }
+
+.calculator{
+background:url(https://i.imgur.com/c7uRzh2.jpg) 10px center no-repeat; background-size:29px; position:relative; border:0px solid green; top:12%; left:1px; width:50%; height:50px;  cursor:pointer;
+  }
+.calculator:hover{
+background:#C6F0FC url(https://i.imgur.com/c7uRzh2.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border:0px solid #e6faff; border-radius:3px; width:49%;
+  }
+
+.clock{
+background:url(https://i.imgur.com/JrXxAsM.jpg) 10px center no-repeat; background-size:29px; position:relative; border:0px solid green; top:12%; left:1px; width:50%; height:50px;  cursor:pointer;
+  }
+.clock:hover{
+background:#C6F0FC url(https://i.imgur.com/JrXxAsM.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border:0px solid #e6faff; border-radius:3px; width:49%;
+  }
+
+.internetexp{
+background:url(https://i.imgur.com/z7HxL56.jpg) 10px center no-repeat; background-size:29px; position:relative; border:0px solid green; top:12%; left:1px; width:50%; height:50px;  cursor:pointer;
+  }
+.internetexp:hover{
+background:#C6F0FC url(https://i.imgur.com/z7HxL56.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border:0px solid #e6faff; border-radius:3px; width:49%;
+  }
+
+.notepad{
+background:url(https://i.imgur.com/xXcsQyA.jpg) 10px center no-repeat; background-size:29px; position:relative; border:0px solid green; top:12%; left:1px; width:50%; height:50px; cursor:pointer;
+  }
+.notepad:hover{
+background:#C6F0FC url(https://i.imgur.com/xXcsQyA.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:49%;
+  }
+
+.omib{
+background:url(https://i.imgur.com/bbuSqqh.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:5px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.omib:hover{
+background:#A0E5F9 url(https://i.imgur.com/bbuSqqh.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.documents{
+background:url(https://i.imgur.com/rfoOzUd.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:55px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.documents:hover{
+background:#A0E5F9 url(https://i.imgur.com/rfoOzUd.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.pictures{
+background:url(https://i.imgur.com/m3bjEZI.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:105px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.pictures:hover{
+background:#A0E5F9 url(https://i.imgur.com/m3bjEZI.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.recent{
+background:url(https://i.imgur.com/bsVmVK6.jpg) 10px center no-repeat; background-size:29px; position:absolute; border-bottom:1px solid #82bcff; top:155px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.recent:hover{
+background:#A0E5F9 url(https://i.imgur.com/bsVmVK6.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.controlpanel{
+background:url(https://i.imgur.com/UveUTW1.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:205px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.controlpanel:hover{
+background:#A0E5F9 url(https://i.imgur.com/UveUTW1.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.network{
+background:url(https://i.imgur.com/yKfLJb5.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:255px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.network:hover{
+background:#A0E5F9 url(https://i.imgur.com/yKfLJb5.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.printers{
+background:url(https://i.imgur.com/R7hgH8k.jpg) 10px center no-repeat; background-size:29px; position:absolute; border-bottom:1px solid #82bcff; top:305px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.printers:hover{
+background:#A0E5F9 url(https://i.imgur.com/R7hgH8k.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.search{
+background:url(https://i.imgur.com/4sv5zBu.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:355px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.search:hover{
+background:#A0E5F9 url(https://i.imgur.com/4sv5zBu.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.help{
+background:url(https://i.imgur.com/JFzIy76.jpg) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:405px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.help:hover{
+background:#A0E5F9 url(https://i.imgur.com/JFzIy76.jpg) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+
+.run{
+background:url(https://i.imgur.com/v6LrIxb.png) 10px center no-repeat; background-size:29px; position:absolute; border:0px solid green; top:455px; left:1px; width:100%; height:50px; cursor:pointer;
+}
+.run:hover{
+background:#A0E5F9 url(https://i.imgur.com/v6LrIxb.png) 10px center no-repeat; background-size:29px; opacity:0.7; border-radius:3px; width:99%;
+}
+  
+.allprograms{
+background:url(https://i.imgur.com/MRkftiJ.png) 10px center no-repeat; background-size:7px; position:absolute; bottom:1px; left:0px; border-top:1px solid #A7D0FF; padding-top:15px; height:30px; width:49.5%; cursor:pointer;  
+}
+.allprograms:hover{
+background:#C6F0FC url(https://i.imgur.com/MRkftiJ.png) 10px center no-repeat; background-size:7px; opacity:0.7; width:49.5%;
+}
+
+.shutdown{
+position:absolute; bottom:1px; right:0px; border-top:1px solid #A7D0FF; padding-top:15px; height:30px; width:49.5%;
+}
+.shutdown:hover{
+background:#A0E5F9; border-radius:3px; opacity:0.7;
+}
+
+.shutdown-img{
+position:absolute; left:8px; top:8px; cursor:pointer;
+}
+.shutdown-img:hover{
+
+}
+
+.shutdown-arrow{
+position:absolute; right:10px; top:19px; cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="desktopWall"></div>
+<div class="myComIco"></div>
+<div class="overlay">
+</div>
+<div class="blank">
+<div id="mycomwin" class="myComWin">Welcome...
+<div id="mycomwinheader" class="titlebar">
+<div class="winTitle">My Computer</div>
+<div class="rest"><img src="https://raw.githack.com/ai1/ai1/master/SVG/window-restore-regular.svg" width="17"/></div>
+<div class="mini"><img src="https://raw.githack.com/ai1/ai1/master/SVG/window-minimize-solid.svg" width="20"/></div>
+<div class="maxi"><img src="https://raw.githack.com/ai1/ai1/master/SVG/window-maximize-regular.svg" width="21"/></div>
+<div class="cls"><img src="https://raw.githack.com/ai1/ai1/master/SVG/times-solid.svg" width="17"/></div>
+</div>
+</div>
+</div>
+
+<div class="tskbar">
+<div class="strbtn"></div>
+<div class="strbtn-hide"></div>
+</div>
+
+<div class="start-overlay">
+ 
+<div class="strmenu">
+<div class="strMenuTop">
+<div class="img" style="background:url(https://i.imgur.com/odcItsD.png) 10px center no-repeat; background-size:50px;">Omi Buzz</div>
+</div>
+<div class="strMenuUnderTop"></div>
+
+<div class="maps"><div style="position:relative; top:16px; left:45px;">Maps</div></div>
+<div class="people"><div style="position:relative; top:16px; left:45px;">People</div></div>
+<div class="calculator"><div style="position:relative; top:16px; left:45px;">Calculator</div></div>
+<div class="clock"><div style="position:relative; top:16px; left:45px;">Alarms &#38; Clock</div></div>
+<div class="internetexp"><div style="position:relative; top:16px; left:45px;">Internet Explorer</div></div>
+<div class="notepad"><div style="position:relative; top:16px; left:45px;">Notepad</div></div>
+
+<div style="border-left:1px solid #82bcff; width:50%; height:90%; top:11.1%; right:0px; position:absolute; z-index:-1; background:#d3e5fa;">
+<div class="omib"><div style="position:relative; top:16px; left:45px;">Omi Buzz</div></div>
+<div class="documents"><div style="position:relative; top:16px; left:45px;">Documents</div></div>
+<div class="pictures"><div style="position:relative; top:16px; left:45px;">Pictures</div></div>
+<div class="recent"><div style="position:relative; top:16px; left:45px;">Recent Items</div></div>
+<div class="controlpanel"><div style="position:relative; top:16px; left:45px;">Control Panel</div></div>
+<div class="network"><div style="position:relative; top:16px; left:45px;">Network Connections</div></div>
+<div class="printers"><div style="position:relative; top:16px; left:45px;">Printers</div></div>
+<div class="search"><div style="position:relative; top:16px; left:45px;">Search</div></div>
+<div class="help"><div style="position:relative; top:16px; left:45px;">Help and Support</div></div>
+<div class="run"><div style="position:relative; top:16px; left:45px;">Run...</div></div>
+</div>
+  
+<div class="allprograms">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Programs</div>
+  
+<div class="shutdown">
+<img class="shutdown-img" src="https://i.imgur.com/gIv3Lde.png" width="29"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shut Down...
+<img class="shutdown-arrow" src="https://i.imgur.com/MRkftiJ.png" width="7"/></div>  
+  
+</div>
+</div>
+
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mycomwin"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+</body>
+</html>
