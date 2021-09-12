@@ -14,7 +14,7 @@ function currentTime() {
   hour = cTime(h);
   min = cTime(m);
   sec = cTime(s);
- document.getElementById("clock").innerText = hour + " : " + min + " : " + sec
+ document.getElementById("clock").innerText = hour + ":" + min + ":" + sec
    +" "+ z;
    setTimeout(function(){ currentTime() }, 1000); 
 }
